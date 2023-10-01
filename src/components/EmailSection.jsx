@@ -5,37 +5,6 @@ import { AiFillLinkedin } from "react-icons/ai";
 import Link from "next/link";
 
 const EmailSection = () => {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-
-    const JSONData = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    // Form  the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      //   tell the server were sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      //   Body of the request is the JSON data we created above.
-      body: JSONData,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    console.log(resData);
-
-    if (response.status === 200) {
-      console.log("Message Sent.");
-    }
-  };
   return (
     <section className="z-0 grid md:grid-cols-2 my-12  md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -58,7 +27,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form action="" className="flex flex-col gap-6" onSubmit={handleSubmit}>
+        <form action="" className="flex flex-col gap-6">
           <div mb-6>
             <label
               htmlFor="email"
