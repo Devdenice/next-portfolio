@@ -81,8 +81,10 @@ const ProjectsSection = () => {
     animate: { y: 0, opacity: 1 },
   };
   return (
-    <section>
-      <h2>My Projects</h2>
+    <section id="projects" className="lg:py-24">
+      <h2 className="text-center text-4xl font-bold  text-primary mb-4">
+        My Projects
+      </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
@@ -103,6 +105,7 @@ const ProjectsSection = () => {
       <ul ref={ref} className="grid md:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (
           <motion.li
+            className="z-50"
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
@@ -120,6 +123,7 @@ const ProjectsSection = () => {
           </motion.li>
         ))}
       </ul>
+      <div className="z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary to-transparent rounded-full h-[550px] w-[550px] blur-3xl   absolute -left-[500px] top-[2000px]  "></div>
     </section>
   );
 };

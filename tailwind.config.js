@@ -14,5 +14,27 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          primary: "#6f7bf7",
+          "primary-focus": "mediumblue",
+          "base-100": "#f3f3f3",
+          neutral: "#121212",
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          primary: "#9bf8f4",
+          "primary-focus": "mediumblue",
+          "base-100": "#121212",
+          neutral: "#eae4ec",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };
